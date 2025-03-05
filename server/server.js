@@ -1,7 +1,7 @@
 const app = require('./server-config.js');
 const routes = require('./server-routes.js');
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 8080;
 
 app.get('/', routes.getAllTodos);
 app.get('/:id', routes.getTodo);
