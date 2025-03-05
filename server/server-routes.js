@@ -1,4 +1,5 @@
 const todosRoutes = require('./routes/todo-routes');
+const authRoutes = require('./routes/auth-routes');
 
 function addErrorReporting(func, message) {
   return async function (req, res) {
@@ -15,6 +16,7 @@ function addErrorReporting(func, message) {
 
 const toExport = {
   ...todosRoutes,
+  ...authRoutes,
 };
 
 for (let route in toExport) {

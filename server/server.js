@@ -3,6 +3,8 @@ const routes = require('./server-routes.js');
 
 const port = process.env.PORT || 8080;
 
+app.post('/auth/login', routes.login);
+
 app.get('/', routes.getAllTodos);
 app.get('/:id', routes.getTodo);
 
