@@ -8,7 +8,9 @@ async function postOrganizationUser(req, res) {
   const { organizationId } = req.params;
   const { userRoleId, user } = req.body;
 
-  authorize(req, res)(canCreateUserForOrganization, undefined, async () => {
+  const organization = await organizationQueries.findById(organizationId);
+
+  authorize(req, res)(canCreateUserForOrganization, organization, async () => {
     const existingOrganization = await organizationQueries.findById(
       organizationId
     );
