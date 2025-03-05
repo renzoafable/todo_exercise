@@ -19,6 +19,9 @@ app.delete('/:id', routes.deleteTodo);
 // Organizations
 app.post('/organizations', routes.postOrganization);
 
+// Users
+app.post('/organizations/:organizationId/users', routes.postOrganizationUser);
+
 if (process.env.NODE_ENV !== 'test') {
   app.listen(port, () => console.log(`Listening on port ${port}`));
 }

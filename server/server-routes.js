@@ -1,6 +1,7 @@
 const todosRoutes = require('./routes/todo-routes');
 const authRoutes = require('./routes/auth-routes');
 const organizationRoutes = require('./routes/organization-routes');
+const userRoutes = require('./routes/user-routes');
 
 function addErrorReporting(func, message) {
   return async function (req, res) {
@@ -19,6 +20,7 @@ const toExport = {
   ...todosRoutes,
   ...authRoutes,
   ...organizationRoutes,
+  ...userRoutes,
 };
 
 for (let route in toExport) {
