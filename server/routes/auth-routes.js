@@ -19,7 +19,7 @@ async function login(req, res) {
     }
   }
 
-  delete user.password_hash;
+  delete user.password;
 
   const token = jwt.sign({ user }, JWT_SECRET, {
     expiresIn: '1h',
